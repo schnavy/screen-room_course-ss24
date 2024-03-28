@@ -1,0 +1,114 @@
+/* include your fonts */
+@font-face {
+  font-family: "Clouds";
+  src: url("../fonts/GT-Pressura-Mono-Text.woff2") format("woff2"),
+    url("../fonts/GT-Pressura-Mono-Text.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* include your fonts */
+@font-face {
+  font-family: "Clouds";
+  src: url("../fonts/APL385.woff2") format("woff2"),
+  url("../fonts/APL385.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html{
+  font-size: 100%;
+  letter-spacing: -1px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  color: #757300;
+  border-color: #757300 !important;
+  font-size: 1rem;
+}
+
+a{
+  color: #ff0000;
+  cursor: pointer !important;
+}
+a.no-link{
+  color: #757300;
+}
+
+body{
+  font-family: system-ui, sans-serif;
+  font-family: "Clouds";
+  overflow: hidden;
+}
+
+.content{
+  width: 85vw;
+  height: 80vh;
+  border: 1px solid black;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content > div{
+  overflow: scroll;
+  padding: 20px;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+.p-10{
+  padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Adjust column sizes as needed */
+  gap: 10px; /* Adjust the gap between grid items */
+  width: 100%;
+}
+
+.grid-item {
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.date {
+  font-weight: bold; /* Styling for date column */
+}
+
+.session div {
+  margin-bottom: 5px; /* Space between session items */
+}
+
+.right{
+  border-left: 1px solid black;
+}
+
+
+@media (max-width: 900px) {
+  html{
+    font-size: 90%;
+  }
+  .content {
+    grid-template-columns: 1fr;
+    overflow: scroll;
+    width: 90vw;
+    height: 95vh;
+  }
+
+  .content > div{
+    overflow: visible;
+    padding: 20px;
+  }
+
+  .right{
+    border-left: none;
+  }
+}
