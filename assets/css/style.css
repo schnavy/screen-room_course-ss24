@@ -46,8 +46,10 @@ body{
 }
 
 .content{
-  width: 85vw;
+  width: 86vw;
   height: 80vh;
+  left: 7vw;
+  top: 10vh;
   border: 1px solid black;
   position: fixed;
   display: grid;
@@ -100,7 +102,9 @@ h1 {
     grid-template-columns: 1fr;
     overflow: scroll;
     width: 90vw;
-    height: 95vh;
+    height: 94vh;
+    left: 10vw;
+    top: 8vh;
   }
 
   .content > div{

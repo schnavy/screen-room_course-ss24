@@ -1,20 +1,27 @@
+let isFirstCall = true;
 setRoomLines()
 document.addEventListener('mousemove', setRoomLines);
+document.addEventListener('resize', setRoomLines);
+
 
 function setRoomLines(){
 
-    let container = document.querySelector(".content")
+    let container = document.querySelector(".content");
     const lineOverlay = document.getElementById('lineOverlay');
-
-    // Viewport dimensions
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-
-    // Container dimensions and position
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
-    let newX = event ? (event.clientX / vw) * (vw - containerWidth) : 100;
-    let newY = event ? (event.clientY / vh) * (vh - containerHeight) : 100;
+
+    let newX, newY;
+    if (isFirstCall) {
+        newX = (vw - containerWidth) / 5*2;
+        newY = (vh - containerHeight) / 5*2;
+        isFirstCall = false; // Update flag
+    } else {
+        newX = (event.clientX / vw) * (vw - containerWidth);
+        newY = (event.clientY / vh) * (vh - containerHeight);
+    }
 
     container.style.left = `${newX}px`;
     container.style.top = `${newY}px`;
